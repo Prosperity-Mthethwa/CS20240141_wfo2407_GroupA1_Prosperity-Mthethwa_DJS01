@@ -19,8 +19,9 @@ const rf = fbr*time //calculates remaining fuel
 const vel2 = calcNewVel(acc, vel, time) //calculates new velocity based on acceleration
 
 // Pick up an error with how the function below is called and make it robust to such errors
-const calcNewVel = () => { 
-  return vel + (acc*time)
+const calcNewVel = ({ initialVelocity, acceleration, time }) => { 
+  if (typeof initialVelocity !== 'number' || typeof acceleration !== 'number' || typeof time !== 'number') {
+    throw new Error('Invalid input. Parameters must be numbers.');
 }
 
 console.log(`Corrected New Velocity: ${vel2} km/h`);
