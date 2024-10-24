@@ -22,14 +22,20 @@ const vel2 = calcNewVel(acc, vel, time) //calculates new velocity based on accel
 const calcNewVel = ({ initialVelocity, acceleration, time }) => { 
   if (typeof initialVelocity !== 'number' || typeof acceleration !== 'number' || typeof time !== 'number') {
     throw new Error('Invalid input. Parameters must be numbers.');
-}
+  }
+
+  //initial velocity conversion 
+  const initialVelocityInMps = initialVelocity / 3.6; 
+
+  //velocity calculation
+  const newVelocity = initialVelocityInMps + acceleration * time; 
+
+  //convert new velocity back to km/h 
+  const newVelocityInKmPerHour = newVelocity * 3.6; 
+
+  return newVelocityInKmPerHour;
+};
 
 console.log(`Corrected New Velocity: ${vel2} km/h`);
 console.log(`Corrected New Distance: ${d2} km`);
 console.log(`Corrected Remaining Fuel: ${rf} kg`);
-
-
-
-
-
-
