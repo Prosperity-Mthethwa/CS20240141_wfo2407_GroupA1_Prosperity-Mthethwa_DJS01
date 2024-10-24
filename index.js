@@ -37,6 +37,6 @@ const newVelocity = calcNewVel({initialVelocity, acceleration, time}); //calcula
 
 
 
-console.log(`Corrected New Velocity: ${vel2} km/h`);
-console.log(`Corrected New Distance: ${d2} km`);
-console.log(`Corrected Remaining Fuel: ${rf} kg`);
+console.log(`New Velocity: Approximately ${newVelocity.toFixed(0)} km/h after correction.`);
+console.log(`New Distance: Approximately ${newDistance.toFixed(0)} km after correction.`);
+console.log(`Remaining Fuel: Approximately ${remainingFuel.toFixed(0)} kg after correction.`);
